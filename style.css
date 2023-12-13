@@ -27,12 +27,6 @@ nav {
 	color: white;
 }
 
-.container {
-    max-width: 1200px; /* Set your desired max width */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Add padding to the container if needed */
-}
-
 .logo {
 	font-size: 50px;
 	font-weight: bold;
@@ -58,6 +52,9 @@ nav {
 #blue {
 	color: #74b9ff;
 }
+#black {
+	color: #000000;
+}
 
 .menu a {
 	text-decoration: none;
@@ -79,6 +76,11 @@ nav {
 }
 
 .container {
+	max-width: 100%;
+    margin: 0 auto;
+    padding: 20px; 
+    box-sizing: border-box;
+    overflow: hidden; 
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -87,12 +89,14 @@ nav {
 }
 
 .left {
+	max-width: 100%; /* Ensures the image is responsive and won't overflow */
+    height: auto;
 	flex-basis: 50%;
 }
 
 .right {
 	flex-basis: 50%;
-	max-width: 400px;
+	max-width: 100%;
 }
 
 .right h1 {
@@ -115,6 +119,17 @@ nav {
 	to {
 		opacity: 1;
 	}
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .right p, .right h1 {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
 }
 
 #about {
@@ -250,16 +265,16 @@ nav {
 
 .services-row {
 	display: grid;
-	grid-template-columns: repeat(2, 500px);
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	grid-auto-rows: minmax(200px, auto);
 	grid-gap: 5em;
 	justify-content: center;
 	padding-top: 20px;
+	padding-left: 20px;
+    padding-right: 20px;
 }
 
 .services-box {
-	width: 100%;
-	height: 100%;
 	box-shadow: 2px 3px 5px grey;
 	padding: 10px;
 	text-align: center;
