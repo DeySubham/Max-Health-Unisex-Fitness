@@ -1,3 +1,9 @@
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+	/* Add this line to hide the scrollbar */
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -21,11 +27,33 @@ nav {
 	color: white;
 }
 
+.container {
+    max-width: 1200px; /* Set your desired max width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding to the container if needed */
+}
+
 .logo {
 	font-size: 50px;
 	font-weight: bold;
 	letter-spacing: 5px;
 }
+
+.fab.fa-facebook-square {
+	color: #3b5998;
+	/* Change to the desired color for Facebook */
+}
+
+.fab.fa-instagram {
+	color: #bc2a8d;
+	/* Change to the desired color for Instagram */
+}
+
+.fab.fa-google {
+	color: #4285F4;
+	/* Change to the desired color for Google */
+}
+
 
 #blue {
 	color: #74b9ff;
@@ -104,19 +132,12 @@ nav {
 	flex-basis: 50%;
 	opacity: 0;
 	transform: translateX(-100%);
-	animation: slideIn 1.5s ease-in-out forwards;
+	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-@keyframes slideIn {
-	from {
-		opacity: 0;
-		transform: translateX(-100%);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
+.slide-in {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .about-right-col {
@@ -177,6 +198,25 @@ nav {
 
 .signup-right-col {
 	flex-basis: 50%;
+	opacity: 0;
+	animation: heartbeat 1s infinite;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.heartbeat-animation {
+	opacity: 1;
+}
+
+@keyframes heartbeat {
+
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
 }
 
 .signup-right-col h1 {
@@ -210,14 +250,16 @@ nav {
 
 .services-row {
 	display: grid;
-	grid-template-columns: repeat(3, 200px);
-	grid-auto-rows: minmax(150px, auto);
+	grid-template-columns: repeat(2, 500px);
+	grid-auto-rows: minmax(200px, auto);
 	grid-gap: 5em;
 	justify-content: center;
 	padding-top: 20px;
 }
 
 .services-box {
+	width: 100%;
+	height: 100%;
 	box-shadow: 2px 3px 5px grey;
 	padding: 10px;
 	text-align: center;
