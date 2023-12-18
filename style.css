@@ -39,23 +39,31 @@ nav {
 	letter-spacing: 5px;
 	color: white;
 }
-
 #hamburger-icon .bar {
     background-color: white;
+}
+@media only screen and (min-width: 769px) {
+    .mobile-only {
+        display: none;
+    }
 }
 
 /* Media query for small screens */
 @media only screen and (max-width: 768px) {
     .logo {
-        font-size: 18px; /* Adjust the font size as needed for small screens */
+        font-size: 22px; /* Adjust the font size as needed for small screens */
         text-align: center; /* Center the text on small screens */
         padding: 10px; /* Add padding to give space around the logo */
     }
-
+	.logo span#blue {
+        font-size: 30px; /* Adjust the font size for Max Health */
+    }
     .menu {
         display: none; /* Hide the menu on small screens initially */
     }
-
+	.mobile-only {
+        display: block; /* Hide the line break for screens wider than 768 pixels */
+    }
     #hamburger-icon {
         display: block; /* Show the hamburger icon on small screens */
     }
@@ -227,9 +235,20 @@ nav {
 	max-width: 100%;
 	/* Ensures the image is responsive and won't overflow */
 	width: 100%;
-	height: auto;
+	height: 900px;
 	display: block; /* Ensure the image is treated as a block element */
     margin: 0 auto; /* Center the image horizontally */
+	background-image: url('images/desktop-banner.jpg');
+    background-size: cover;
+	background-position: center;
+}
+
+/* Media query for screens smaller than 768px (adjust as needed) */
+@media only screen and (max-width: 768px) {
+    .left {
+        background-image: url('images/mobile-banner.jpg');
+		background-size: cover;
+    }
 }
 
 .right {
@@ -348,6 +367,7 @@ nav {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .signup-left-col {
@@ -357,10 +377,12 @@ nav {
 
 .signup-left-col img {
 	width: 60%;
+	max-width: 100%;
 }
 
 .signup-right-col {
 	flex-basis: 50%;
+	text-align: center;
 	opacity: 0;
 	animation: heartbeat 1s infinite;
 	transition: opacity 0.5s ease-in-out;
@@ -391,6 +413,25 @@ nav {
 	letter-spacing: 60px;
 	color: rgba(0, 0, 0, 0.3);
 	margin: 10px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+	#signup {
+		clip-path: none; /* Remove clip-path for simplicity on small screens */
+	}
+
+	.signup-left-col img {
+		width: 100%; /* Make the image take full width on small screens */
+	}
+
+	.signup-right-col h1{
+		font-size: 1.5em; /* Further reduce font size for smaller screens */
+	}
+
+	.signup-right-col h2 {
+		font-size: 1.2em; 
+		letter-spacing: normal;
+	}
 }
 
 
@@ -514,6 +555,30 @@ nav {
 .contact-right-col p {
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+/* Add styles for social icons in mobile view */
+.social-icons-mobile {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-icons-mobile a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Adjust the icon size as needed */
+.social-icons-mobile i {
+    font-size: 2em;
+}
+
+/* Media query to hide social icons on screens larger than 768px */
+@media only screen and (min-width: 769px) {
+    .social-icons-mobile {
+        display: none;
+    }
 }
 
 
