@@ -16,7 +16,7 @@ header {
 	width: 100%;
 	height: 100vh;
 	background: black;
-	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%);
+	/* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%); */
 }
 
 nav {
@@ -235,7 +235,7 @@ nav {
 	max-width: 100%;
 	/* Ensures the image is responsive and won't overflow */
 	width: 100%;
-	height: 900px;
+	height: 100vh;
 	display: block; /* Ensure the image is treated as a block element */
     margin: 0 auto; /* Center the image horizontally */
 	background-image: url('images/desktop-banner.jpg');
@@ -246,6 +246,7 @@ nav {
 /* Media query for screens smaller than 768px (adjust as needed) */
 @media only screen and (max-width: 768px) {
     .left {
+		height: 100vh; /* Set height to 100% of the viewport height on mobile */
         background-image: url('images/mobile-banner.jpg');
 		background-size: cover;
     }
@@ -347,20 +348,11 @@ nav {
 	margin: 15px 0px;
 }
 
-
-.c-btn {
-	padding: 10px;
-	margin: 10px 0px;
-	color: white;
-	border: none;
-	background: #74b9ff;
-}
-
 #signup {
 	padding-top: 50px;
 	padding-bottom: 20px;
 	background: rgba(0, 0, 0, 0.03);
-	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%);
+	/* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%); */
 }
 
 .signup-row {
@@ -512,7 +504,7 @@ nav {
 	padding-top: 50px;
 	padding-bottom: 200px;
 	background: rgba(0, 0, 0, 0.03);
-	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%);
+	/* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%); */
 }
 
 .work-box {
