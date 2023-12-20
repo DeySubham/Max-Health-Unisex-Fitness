@@ -335,6 +335,10 @@ nav {
 .about-left-col {
 	max-width: 400px;
 	margin: auto;
+	max-width: 400px;
+    margin: auto;
+    position: relative;
+    overflow: hidden; /* Hide overflow content */
 }
 
 
@@ -346,6 +350,144 @@ nav {
 	font-size: 20px;
 	text-align: justify;
 	margin: 15px 0px;
+}
+.about-left-col p#additionalContent {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+.about-left-col p#additionalContent.show {
+    opacity: 1;
+    max-height: 1000px; /* Adjust this value based on your content height */
+}
+
+#readMoreBtn {
+    color: purple;
+    /* Add any additional styling as needed */
+}
+
+#pricing {
+	text-align: center;
+    padding: 50px 0;
+}
+
+.pricing-intro {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 50px;
+}
+
+.pricing-intro p {
+    font-size: 50px;
+    color: purple;
+    margin: 0; /* Remove default margin to ensure proper centering */
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    max-width: 350px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+	border: 2px solid #cc00ff;
+}
+
+button:hover {
+    background-color:  rgba(234, 0, 255, 0.2);
+}
+
+#gym-info {
+    background-color: rgb(71, 71, 71);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.gym-info-container {
+    display: flex;
+    justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.gym-info-item {
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+	flex-basis: 30%;
+}
+
+.gym-info-item i {
+    font-size: 70px; /* Adjust the icon size as needed */
+	color: rgba(150, 36, 150, 0.836);
+    margin-bottom: 10px; /* Add spacing between the icon and text */
+}
+
+.gym-info-item h3 {
+    font-size: 14px; /* Adjust the heading size */
+    color: whitesmoke;
+    margin: 5px 0; /* Adjust the top and bottom margin */
+}
+
+.gym-info-item p {
+    font-size: 70px; /* Adjust the paragraph size */
+    color: whitesmoke;
+    margin: 5px 0; /* Adjust the top and bottom margin */
+}
+
+/* Media query for screens smaller than 768px (adjust as needed) */
+@media only screen and (max-width: 768px) {
+    .gym-info-container {
+        flex-direction: column; /* Stack items vertically in mobile view */
+		align-items: center; /* Center items horizontally */
+    }
+
+    .gym-info-item {
+        flex-basis: 100%; /* Take full width in mobile view */
+    }
 }
 
 #signup {
@@ -477,9 +619,8 @@ nav {
 	margin-top: -20px;
 }
 
-#members {
+/* #members {
 	padding: 100px;
-	background: url(images/dumble.png);
 	background-size: 35% 35%;
 	background-repeat: no-repeat;
 	background-position: top right;
@@ -498,7 +639,7 @@ nav {
 
 .member-card h2 {
 	margin: 20px 0px;
-}
+} */
 
 #work {
 	padding-top: 50px;

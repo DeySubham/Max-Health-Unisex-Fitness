@@ -55,4 +55,49 @@ document.addEventListener('DOMContentLoaded', function () {
             bar.classList.toggle('active');
         });
     });
+
+     // Toggle Read More functionality
+     const readMoreButton = document.getElementById('readMoreBtn');
+     readMoreButton.addEventListener('click', toggleReadMore);
+ 
+     function toggleReadMore() {
+         const additionalContent = document.getElementById('additionalContent');
+         additionalContent.classList.toggle('show');
+     }
+
+     // Count from zero functionality
+     const squareFootageCounter = document.getElementById('squareFootage');
+     const membersCounter = document.getElementById('members');
+     const daysAWeekCounter = document.getElementById('daysAWeek')
+ 
+     function startCountingAnimation(target, endValue) {
+         let currentValue = 0;
+         const animationInterval = setInterval(function () {
+             currentValue += Math.ceil(endValue / 100); // Increment by a fraction of the end value
+             target.textContent = currentValue;
+ 
+             if (currentValue >= endValue) {
+                 target.textContent = endValue;
+                 clearInterval(animationInterval);
+             }
+         }, 15); // Adjust the interval duration as needed
+     }
+ 
+     function checkIfInViewport() {
+         const gymInfoSection = document.getElementById('gym-info');
+         const rect = gymInfoSection.getBoundingClientRect();
+         const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+ 
+         if (isInViewport) {
+             startCountingAnimation(squareFootageCounter, 1100);
+             startCountingAnimation(membersCounter, 50);
+             startCountingAnimation(daysAWeekCounter, 6);
+             window.removeEventListener('scroll', checkIfInViewport);
+         }
+     }
+ 
+     window.addEventListener('scroll', checkIfInViewport);
+ 
+     // Trigger the function initially
+     checkIfInViewport();
 });
