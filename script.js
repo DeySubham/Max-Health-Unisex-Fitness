@@ -29,23 +29,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     window.addEventListener('scroll', checkSlide);
 
-    // Heartbeat animation on scroll
-    const heartbeatParagraph = document.querySelector('.signup-right-col');
-    function fadeInOnScroll() {
-        const elementTop = heartbeatParagraph.getBoundingClientRect().top;
-        const elementBottom = heartbeatParagraph.getBoundingClientRect().bottom;
+    // // Heartbeat animation on scroll
+    // const heartbeatParagraph = document.querySelector('.signup-right-col');
+    // function fadeInOnScroll() {
+    //     const elementTop = heartbeatParagraph.getBoundingClientRect().top;
+    //     const elementBottom = heartbeatParagraph.getBoundingClientRect().bottom;
 
-        const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
+    //     const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
 
-        if (isVisible) {
-            heartbeatParagraph.classList.add('heartbeat-animation');
-        }
-    }
-    function handleScroll() {
-        fadeInOnScroll();
-    }
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Trigger on page load
+    //     if (isVisible) {
+    //         heartbeatParagraph.classList.add('heartbeat-animation');
+    //     }
+    // }
+    // function handleScroll() {
+    //     fadeInOnScroll();
+    // }
+    // window.addEventListener('scroll', handleScroll);
+    // handleScroll(); // Trigger on page load
 
     // Hamburger menu functionality
     document.getElementById('hamburger-icon').addEventListener('click', function () {

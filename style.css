@@ -89,6 +89,10 @@ nav {
 	color: #74b9ff;
 }
 
+#white {
+	color: white;
+}
+
 #black {
 	color: #000000;
 }
@@ -301,6 +305,7 @@ nav {
 
 #about {
 	padding: 100px 0px;
+	background-color: rgb(34, 34, 34);
 }
 
 .about-row {
@@ -350,6 +355,7 @@ nav {
 	font-size: 20px;
 	text-align: justify;
 	margin: 15px 0px;
+	color: whitesmoke;
 }
 .about-left-col p#additionalContent {
     opacity: 0;
@@ -364,11 +370,24 @@ nav {
 }
 
 #readMoreBtn {
-    color: purple;
+    color: whitesmoke;
     /* Add any additional styling as needed */
 }
 
+/* Media query for screens smaller than 768px (adjust as needed) */
+@media only screen and (max-width: 768px) {
+    .about-row {
+        flex-direction: column-reverse; /* Reverse the order for mobile view */
+    }
+
+    .about-left-col,
+    .about-right-col {
+        flex-basis: 100%; /* Take full width in mobile view */
+    }
+}
+
 #pricing {
+	background-color: rgb(34, 34, 34);
 	text-align: center;
     padding: 50px 0;
 }
@@ -381,9 +400,11 @@ nav {
 }
 
 .pricing-intro p {
+	font-weight: bold;
     font-size: 50px;
-    color: purple;
+    color: #74b9ff;
     margin: 0; /* Remove default margin to ensure proper centering */
+	padding-bottom: 40px;
 }
 
 .pricing-grid {
@@ -430,15 +451,23 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-	border: 2px solid #cc00ff;
+	border: 2px solid #74b9ff;
 }
 
 button:hover {
-    background-color:  rgba(234, 0, 255, 0.2);
+    background-color:  rgba(162, 227, 253, 0.76);
+}
+
+@media only screen and (max-width: 768px) {
+
+	.pricing-intro p {
+		font-size: 2.5em;
+	}
+
 }
 
 #gym-info {
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(34, 34, 34);
     padding: 80px 0;
     text-align: center;
 }
@@ -462,7 +491,7 @@ button:hover {
 
 .gym-info-item i {
     font-size: 70px; /* Adjust the icon size as needed */
-	color: rgba(150, 36, 150, 0.836);
+	color: #74b9ff;
     margin-bottom: 10px; /* Add spacing between the icon and text */
 }
 
@@ -490,11 +519,11 @@ button:hover {
     }
 }
 
-#signup {
+/* #signup {
 	padding-top: 50px;
 	padding-bottom: 20px;
 	background: rgba(0, 0, 0, 0.03);
-	/* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%); */
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80% 80%, 0% 100%);
 }
 
 .signup-row {
@@ -547,30 +576,31 @@ button:hover {
 	letter-spacing: 60px;
 	color: rgba(0, 0, 0, 0.3);
 	margin: 10px 0px;
-}
-
+} */
+/* 
 @media only screen and (max-width: 768px) {
 	#signup {
 		clip-path: none; /* Remove clip-path for simplicity on small screens */
-	}
+	/* }
 
 	.signup-left-col img {
 		width: 100%; /* Make the image take full width on small screens */
-	}
+	/* }
 
 	.signup-right-col h1{
 		font-size: 1.5em; /* Further reduce font size for smaller screens */
-	}
+	/* }
 
 	.signup-right-col h2 {
 		font-size: 1.2em; 
 		letter-spacing: normal;
 	}
-}
+}  */
 
 
 #services {
 	padding: 50px 0px;
+	background-color: rgb(34, 34, 34);
 }
 
 .services-info {
