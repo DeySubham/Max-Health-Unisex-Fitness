@@ -9,7 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Calculate the target position, offset by a certain amount (adjust as needed)
+                const targetPosition = targetElement.offsetTop - 80;
+
+                // Scroll to the target position
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
     });
@@ -54,6 +61,21 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.bar').forEach(function (bar) {
             bar.classList.toggle('active');
         });
+        // Prevent the click event from propagating to the document body
+        event.stopPropagation();
+    });
+    
+    // Add a click event listener to the document body
+    document.body.addEventListener('click', function () {
+        var menu = document.querySelector('.menu');
+        
+        // Check if the menu is open before closing it
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+            document.querySelectorAll('.bar').forEach(function (bar) {
+                bar.classList.remove('active');
+            });
+        }
     });
 
      // Toggle Read More functionality
