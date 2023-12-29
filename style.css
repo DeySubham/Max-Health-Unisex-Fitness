@@ -664,6 +664,29 @@ button:hover {
 	margin-top: -20px;
 }
 
+@media only screen and (max-width: 768px) {
+    .services-box {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .services-box.slide-in {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .services-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+	.services-box:hover {
+        box-shadow: none;
+    }
+}
+
 /* #members {
 	padding: 100px;
 	background-size: 35% 35%;

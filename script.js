@@ -84,7 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
  
      function toggleReadMore() {
          const additionalContent = document.getElementById('additionalContent');
+         const buttonText = readMoreButton.textContent.trim();
+
          additionalContent.classList.toggle('show');
+
+          // Check the current state and update the button text
+    if (additionalContent.classList.contains('show')) {
+        readMoreButton.textContent = 'Read Less';
+    } else {
+        readMoreButton.textContent = 'Read More';
+    }
      }
 
      // Count from zero functionality
@@ -122,4 +131,23 @@ document.addEventListener('DOMContentLoaded', function () {
  
      // Trigger the function initially
      checkIfInViewport();
+
+
+      // Slide-in animation on scroll for mobile in services section
+    const servicesBoxes = document.querySelectorAll('.services-box');
+    function checkSlideMobile() {
+        servicesBoxes.forEach(box => {
+            const slideInAt = window.scrollY + window.innerHeight - box.clientHeight / 4;
+            const isHalfShown = slideInAt > box.offsetTop;
+            const isNotScrolledPast = window.scrollY < box.offsetTop + box.clientHeight;
+
+            if (isHalfShown && isNotScrolledPast) {
+                box.classList.add('slide-in');
+            } else {
+                box.classList.remove('slide-in');
+            }
+        });
+    }
+    window.addEventListener('scroll', checkSlideMobile);
+
 });
